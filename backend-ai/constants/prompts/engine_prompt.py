@@ -1,5 +1,7 @@
+# Import rules
 from constants.prompts.rule_prompt import CORE_RULES
 
+# Define prompt
 ENGINE_PROMPT = f"""
 You are 'AgriMama Search Engine'. Provide an accurate answer based on the provided search context.
 
