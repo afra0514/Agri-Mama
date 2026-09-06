@@ -7,12 +7,12 @@ def analyze_document_text(file_path: str):
     Extracts and analyzes text from user-uploaded PDF documents. 
     Use this for research papers, govt policies, or manuals.
     """
+
     try:
         doc = fitz.open(file_path)
         text = ""
         for page in doc[:5]:
-            text += page.get_text()
-        
+            text += page.get_text()   
         doc.close()
         
         if not text.strip():
