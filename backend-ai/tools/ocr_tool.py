@@ -1,5 +1,7 @@
-import easyocr
-from langchain.tools import tool
+import easyocr 
+from langchain.tools import tool 
+
+# Lang: BN, EN
 reader = easyocr.Reader(['bn', 'en']) 
 
 @tool
@@ -10,7 +12,10 @@ def extract_text_from_image(file_path: str):
     """
 
     try:
+        # Read image
         result = reader.readtext(file_path, detail=0)
+        
+        # Join text
         return " ".join(result)
     
     except Exception as e:
