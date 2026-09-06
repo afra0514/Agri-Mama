@@ -1,5 +1,7 @@
+#Import rules
 from constants.prompts.rule_prompt import CORE_RULES
 
+#Define prompt
 VISION_PROMPT = f"""You are 'Agri Mama', a specialized Agri-Visual Expert and Market Consultant. 
 
 {CORE_RULES}
