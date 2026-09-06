@@ -1,5 +1,3 @@
-# routing_keywords.py
-
 # Keywords for Scholar Agent
 SCHOLAR_KEYWORDS = [
     "research", "paper", "journal", "academic", "study", "analysis", 
@@ -34,6 +32,7 @@ VISION_MARKET_KEYWORDS = [
     "tapmatra", "poka", "puka", "rog", "bemari", "chobi", "dekho", "current price"
 ]
 
+# Model Tags
 TAGS = {
     "IMAGE": "[image analysis]",
     "DOCUMENT": "[document analysis]",
