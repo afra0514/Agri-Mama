@@ -3,6 +3,7 @@ from langchain.agents import create_tool_calling_agent, AgentExecutor
 from tools.search_tool import grounded_search_tool as internet_search_tool 
 from constants.prompts.vision_prompt import VISION_PROMPT
 
+# Create agent
 def get_vision_market_agent(llm):
     prompt = ChatPromptTemplate.from_messages([
         ("system", VISION_PROMPT),
@@ -10,7 +11,11 @@ def get_vision_market_agent(llm):
         ("placeholder", "{agent_scratchpad}"),
     ])
 
+    # Define tools
     tools = [internet_search_tool]
+
+    # Initialize agent
     agent = create_tool_calling_agent(llm, tools, prompt)
-    
+
+    # Return executor
     return AgentExecutor(agent=agent, tools=tools, verbose=True, handle_parsing_errors=True)
