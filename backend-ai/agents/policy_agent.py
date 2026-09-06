@@ -13,7 +13,6 @@ def get_policy_agent(llm):
     ])
     
     tools = [agri_knowledge_tool, internet_search_tool, analyze_document_text]
-    
     agent = create_tool_calling_agent(llm, tools, prompt)
     
     return AgentExecutor(
