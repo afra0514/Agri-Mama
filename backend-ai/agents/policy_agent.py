@@ -5,16 +5,21 @@ from tools.search_tool import grounded_search_tool as internet_search_tool
 from tools.document_tool import analyze_document_text
 from constants.prompts.policy_prompt import POLICY_PROMPT
 
+# Create agent
 def get_policy_agent(llm):
     prompt = ChatPromptTemplate.from_messages([
         ("system", POLICY_PROMPT),
         ("human", "{input}"),
         ("placeholder", "{agent_scratchpad}"),
     ])
-    
+
+    # Define tools
     tools = [agri_knowledge_tool, internet_search_tool, analyze_document_text]
+
+    # Initialize agent
     agent = create_tool_calling_agent(llm, tools, prompt)
     
+    # Return executor
     return AgentExecutor(
         agent=agent, 
         tools=tools, 
