@@ -1,6 +1,6 @@
 # routing_keywords.py
 
-# Keywords for Scholar Agent (একাডেমিক এবং বৈজ্ঞানিক তথ্যের জন্য)
+# Keywords for Scholar Agent
 SCHOLAR_KEYWORDS = [
     "research", "paper", "journal", "academic", "study", "analysis", 
     "findings", "data", "scientific", "citation", "abstract", "methodology",
@@ -9,7 +9,7 @@ SCHOLAR_KEYWORDS = [
     "gobeshona", "prokolpo", "tothyo", "shikhya", "tathya", "nibondho", "sharsongkhep", "porikkha"
 ]
 
-# Keywords for Policy Agent (সরকারি সুবিধা এবং নিয়মাবলীর জন্য)
+# Keywords for Policy Agent
 POLICY_KEYWORDS = [
     "loan", "policy", "subsidy", "govt", "government", "registration", 
     "scheme", "circular", "gazette", "insurance", "grant", "legal", 
@@ -21,7 +21,7 @@ POLICY_KEYWORDS = [
     "niti", "nitimala", "krishok card", "krishak card", "lon", "registretion", "nibondhon"
 ]
 
-# Keywords for Vision & Market Agent (বাজার দর, আবহাওয়া এবং ছবি বিশ্লেষণের জন্য)
+# Keywords for Vision & Market Agent
 VISION_MARKET_KEYWORDS = [
     "price", "market", "weather", "forecast", "rate", "cost", 
     "wholesale", "retail", "rainfall", "temperature", "humidity", 
