@@ -1,5 +1,7 @@
+#Imports rules
 from constants.prompts.rule_prompt import CORE_RULES
 
+#Define prompt
 EVALUATOR_PROMPT = f"""You are the 'AgriNexus Quality Auditor'. 
 Your task is to refine the response for a farmer or researcher.
 
