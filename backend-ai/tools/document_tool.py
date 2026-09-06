@@ -1,5 +1,5 @@
-import pymupdf as fitz
-from langchain.tools import tool
+import pymupdf as fitz 
+from langchain.tools import tool 
 
 @tool
 def analyze_document_text(file_path: str):
@@ -9,15 +9,21 @@ def analyze_document_text(file_path: str):
     """
 
     try:
+        # Open PDF
         doc = fitz.open(file_path)
         text = ""
-        for page in doc[:5]:
+        
+        # Read pages
+        for page in doc[:5]: # Page limit (5)
             text += page.get_text()   
+            
         doc.close()
         
+        # Check content
         if not text.strip():
             return "The PDF seems to be empty or contains only images. Try using the Vision Tool."
-        return text[:4000] 
+        
+        return text[:4000] # Character limit
         
     except Exception as e:
         return f"Error reading PDF: {str(e)}"
