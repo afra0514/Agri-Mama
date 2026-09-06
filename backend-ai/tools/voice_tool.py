@@ -1,7 +1,7 @@
-import os
-from langchain.tools import tool
-from groq import Groq
-import config
+import os 
+from langchain.tools import tool 
+from groq import Groq 
+import config 
 
 @tool
 def transcribe_voice(file_path: str):
@@ -12,17 +12,22 @@ def transcribe_voice(file_path: str):
     """
 
     try:
+        # Init client
         client = Groq(api_key=config.GROQ_API_KEY)
         
+        # Open file
         with open(file_path, "rb") as file:
+             # API call
              transcription = client.audio.transcriptions.create(
-                file=(os.path.basename(file_path), file.read()),
-                model=config.VOICE_MODEL, 
-                response_format="text",
+                file=(os.path.basename(file_path), file.read()), # File data
+                model=config.VOICE_MODEL, # Whisper model
+                response_format="text", # Text output
             )
              
+        # Return text
         return transcription
         
     except Exception as e:
+        # Handle error
         print(f"Voice Transcription Error: {e}")
         return f"Could not process voice message. Error: {str(e)}"
