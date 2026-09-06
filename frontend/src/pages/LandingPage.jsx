@@ -33,16 +33,14 @@ const LandingPage = () => {
 
   const mainVision = [
     { 
-        id: "about-us", 
-        caption: "PROBLEM", 
-        title: "Why use Agri Mama?", 
+        id: "why-use", 
+        title: "Why use?", 
         icon: <AlertCircle size={32} />, 
         desc: "Traditional farming in Bangladesh faces a massive information gap. Small-scale farmers often lose 30-40% of their yield due to misdiagnosed crop diseases and counterfeit seeds. Researchers struggle to synthesize data scattered across fragmented portals." 
     },
     { 
         id: "our-mission", 
-        caption: "SOLUTION", 
-        title: "How Agri Mama Helps!", 
+        title: "Our Mission!", 
         icon: <Zap size={32} />, 
         desc: "Agri Mama deploys an intelligent multi-agent AI system. Using Computer Vision for disease diagnosis and RAG-based retrieval for subsidies, we turn complex agricultural data into simple, automated workflows for farmers and scientists." 
     }
