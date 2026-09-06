@@ -30,7 +30,7 @@ const Footer = ({ onVisionClick }) => {
 
         <div className="ft-footer-column">
           <h4 className="ft-footer-column-title">Company</h4>
-          <a href="#why-use" onClick={(e) => handleLinkClick(e, 'about-us')} className="ft-footer-link">
+          <a href="#why-use" onClick={(e) => handleLinkClick(e, 'why-use')} className="ft-footer-link">
             <Info size={16} /> Why Use?
           </a>
           <a href="#our-mission" onClick={(e) => handleLinkClick(e, 'our-mission')} className="ft-footer-link">
