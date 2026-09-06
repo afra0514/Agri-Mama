@@ -10,8 +10,8 @@ def transcribe_voice(file_path: str):
     Use this tool whenever the user uploads a voice message or provides an audio file.
     It returns the spoken text in string format.
     """
+
     try:
-        # Initialize Groq client
         client = Groq(api_key=config.GROQ_API_KEY)
         
         with open(file_path, "rb") as file:
@@ -20,6 +20,7 @@ def transcribe_voice(file_path: str):
                 model=config.VOICE_MODEL, 
                 response_format="text",
             )
+             
         return transcription
         
     except Exception as e:
