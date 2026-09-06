@@ -12,6 +12,7 @@ def analyze_image_with_vision(image_path: str, user_query: str = "Describe this 
     Role: Agricultural Vision Expert.
     Extracts visual information from an image to help the doctor agent diagnose.
     """
+
     def encode_image(path):
         with open(path, "rb") as image_file:
             return base64.b64encode(image_file.read()).decode('utf-8')
@@ -34,10 +35,13 @@ def analyze_image_with_vision(image_path: str, user_query: str = "Describe this 
                     ],
                 }
             ],
+
             model=config.VISION_MODEL,
             temperature=0.1,
             max_tokens=300 
         )
+
         return chat_completion.choices[0].message.content
+    
     except Exception as e:
         return f"Vision processing failed: {str(e)}"
