@@ -1,6 +1,6 @@
-from langchain.tools import tool
-from ground_search.search_engine import get_search_results
-import config
+from langchain.tools import tool 
+from ground_search.search_engine import get_search_results 
+import config 
 
 @tool
 def grounded_search_tool(query: str):
@@ -10,10 +10,14 @@ def grounded_search_tool(query: str):
     Always use this tool when the user asks for 'today', 'live', 'price', or 'weather'.
     """
 
+    # Fetch results
     context, provider = get_search_results(query)
+    
+    # Null check
     if not context:
         return "No real-time information was found on the internet for this query."
     
+    # Return results
     return f"Information retrieved from {provider}:\n\n{context}"
 
 @tool
@@ -23,7 +27,11 @@ def academic_search_tool(query: str):
     Use this specifically when the user asks for academic, formal, or scientific research-related information.
     """
 
+    # Local import
     from langchain_community.tools.tavily_search import TavilySearchResults
-    search = TavilySearchResults(k=3, search_depth="advanced")
     
+    # Setup search
+    search = TavilySearchResults(k=3, search_depth="advanced") # Limit (3)
+    
+    # Run search
     return search.run(f"academic journal and research paper on: {query}")
