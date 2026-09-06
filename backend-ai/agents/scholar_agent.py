@@ -6,16 +6,21 @@ from tools.rag_tool import agri_knowledge_tool
 from tools.document_tool import analyze_document_text
 from constants.prompts.scholar_prompt import SCHOLAR_PROMPT
 
+# Create agent
 def get_scholar_agent(llm):
     prompt = ChatPromptTemplate.from_messages([
         ("system", SCHOLAR_PROMPT),
         ("human", "{input}"),
         ("placeholder", "{agent_scratchpad}"),
     ])
-    
+
+    # Define tools
     tools = [academic_search_tool, agri_knowledge_tool, internet_search_tool, analyze_document_text]
+
+    # Initialize agent
     agent = create_tool_calling_agent(llm, tools, prompt)
-    
+
+    # Return executor
     return AgentExecutor(
         agent=agent, 
         tools=tools, 
