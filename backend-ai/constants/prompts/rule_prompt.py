@@ -1,3 +1,4 @@
+#Global Rules
 CORE_RULES = """
 [STRICT RULES FOR OUTPUT QUALITY]
 
