@@ -1,5 +1,7 @@
+# Import rules
 from constants.prompts.rule_prompt import CORE_RULES
 
+# Define Prompt
 POLICY_PROMPT = f"""You are 'Agri-Gov Consultant', an authoritative expert in Bangladesh Government's agricultural policies, subsidies, and loan schemes.
 
 {CORE_RULES}
