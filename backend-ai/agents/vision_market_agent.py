@@ -9,6 +9,8 @@ def get_vision_market_agent(llm):
         ("human", "{input}"),
         ("placeholder", "{agent_scratchpad}"),
     ])
+
     tools = [internet_search_tool]
     agent = create_tool_calling_agent(llm, tools, prompt)
+    
     return AgentExecutor(agent=agent, tools=tools, verbose=True, handle_parsing_errors=True)
