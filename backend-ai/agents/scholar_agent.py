@@ -14,7 +14,6 @@ def get_scholar_agent(llm):
     ])
     
     tools = [academic_search_tool, agri_knowledge_tool, internet_search_tool, analyze_document_text]
-    
     agent = create_tool_calling_agent(llm, tools, prompt)
     
     return AgentExecutor(
